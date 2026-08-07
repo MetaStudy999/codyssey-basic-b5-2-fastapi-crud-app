@@ -6,6 +6,6 @@ test_required_directories_and_templates_exist (test_structure.StructureTest.test
 test_router_uses_depends_form_and_303 (test_structure.StructureTest.test_router_uses_depends_form_and_303) ... ok
 
 ----------------------------------------------------------------------
-Ran 6 tests in 2.219s
+Ran 6 tests in 2.066s
 
 OK
