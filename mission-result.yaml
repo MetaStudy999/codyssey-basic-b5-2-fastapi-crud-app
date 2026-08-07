@@ -1,0 +1,98 @@
+schema_version: 1
+mission:
+  id: "B5-2"
+  title: "글을 쓰고·보고·고치고·지울 수 있는 게시판형 웹 서비스 만들기"
+
+control_tower:
+  repository: "MetaStudy999/codyssey-basic"
+  baseline_sha: "0d1581b3e82366988f57e1d76da311c028b8e15e"
+  drift: "NONE"
+
+mission_repository:
+  repository: "MetaStudy999/codyssey-basic-b5-2-fastapi-crud-app"
+  baseline_sha: "12e1630c0391e86c912df8a74c9e5afe59c15273"
+  final_commit_sha: "942b951ac645152c9e59838362950f5729c8f38e"
+  pull_request: "https://github.com/MetaStudy999/codyssey-basic-b5-2-fastapi-crud-app/pull/1"
+  merge_status: "MERGED"
+
+source:
+  mode: "FULL_SOURCE"
+  confidence: "HIGH"
+  mission_source:
+    state: "VALID"
+    location: "b5-2-mission.pdf"
+  evaluation_source:
+    state: "VALID"
+    location: "b5-2-evaluation.md"
+  gaps:
+    - "Evaluation PDF is absent; the official Evaluation Markdown is VALID and substantive, so no requirement remains unverified."
+
+execution:
+  status: "PASS"
+  learning: "NOT-STUDIED"
+  current_gate: "G8_MERGE"
+  verdict: "ACCEPT"
+
+gates:
+  G1_SOURCE: "PASS"
+  G2_BUILD: "PASS"
+  G3_TEST: "PASS"
+  G4_REVIEW: "PASS"
+  G5_RUNTIME: "PASS"
+  G6_EVIDENCE: "PASS"
+  G7_LEARN: "PASS"
+  G8_MERGE: "PASS"
+
+requirements:
+  confirmed: 12
+  passed: 12
+  partial: 0
+  failed: 0
+  unverified: 0
+
+validation:
+  tests: "PASS"
+  commands:
+    - "python -m compileall -q app scripts tests"
+    - "python -m unittest discover -s tests -v"
+  blocker: 0
+  major: 0
+  minor: 0
+
+runtime:
+  required: true
+  owner: "AI"
+  result: "PASS"
+  notes: "Actual Uvicorn/HTTP/SQLite runtime completed; create/list/detail/edit/update/delete, 303 PRG, missing-ID UX, direct DB inspection, and restart persistence were verified. Human screenshots are optional in the Mission source and are not required for this acceptance gate."
+
+evidence:
+  complete: true
+  locations:
+    - "evidence/test-results.txt"
+    - "evidence/http-flow.txt"
+    - "evidence/db-verification.txt"
+    - "evidence/server-log.txt"
+    - "evidence/runtime-environment.txt"
+    - "evidence/runtime-notes.md"
+    - "evidence/review.md"
+  missing: []
+
+dependency:
+  state: "RECOMMENDED"
+  related_missions:
+    - "B5-1"
+
+risks:
+  - "Learner personal mastery/explanation has not been demonstrated; implementation-aligned learning material is complete."
+
+backlog:
+  - "Optional Mission bonus: title search"
+  - "Optional presentation screenshots"
+  - "Learner explanation practice"
+
+representative_integration:
+  required: true
+  status: "PENDING"
+  requested_updates:
+    - "config/missions.yaml"
+  generated_outputs_direct_edit: false
