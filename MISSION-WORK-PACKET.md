@@ -9,6 +9,8 @@
 - Control Tower: `MetaStudy999/codyssey-basic` (READ ONLY)
 - Control Tower frozen baseline: `0d1581b3e82366988f57e1d76da311c028b8e15e`
 - Mission repository baseline: `12e1630c0391e86c912df8a74c9e5afe59c15273`
+- Mission merged implementation SHA: `942b951ac645152c9e59838362950f5729c8f38e`
+- Mission PR: `#1` (MERGED)
 
 ## 2. Source Inventory
 
@@ -20,7 +22,7 @@
 | Evaluation PDF | none found | MISSING | No evaluation PDF is present in the repository baseline |
 | Official operations | Control Tower frozen Governance | VALID | Read-only execution rules and Source protocol |
 
-- Source Mode: `FULL SOURCE`
+- Source Mode: `FULL_SOURCE`
 - Source Confidence: `HIGH`
 - Source Gaps: Evaluation PDF is absent, but the official Evaluation Markdown is substantive and sufficient for evaluation mapping.
 - Source Conflicts: none found.
@@ -30,7 +32,7 @@
 - B5-1 relationship: `RECOMMENDED` conceptually, not an official build prerequisite.
 - B5-2 Mission does not require reuse of B5-1 artifacts.
 - B5-2 explicitly limits scope to one model and excludes model relationships, authentication and authorization.
-- Control Tower drift affecting this workcell: none identified at start; frozen Governance remains the execution basis.
+- Control Tower drift affecting this workcell: `NONE`; frozen Governance remained the execution basis.
 
 ## 4. Repository Baseline Inventory
 
@@ -86,7 +88,7 @@ The minimum sufficient implementation uses one `Memo` domain model with four fie
 | REQ-B5-2-009 | Not-found UX | Mission §4.5, Eval item 1 | missing ID HTTP page | PASS |
 | REQ-B5-2-010 | SQLite + ORM Session + Depends | Mission §4.9, Eval items 1/2/3 | DB file + code inspection + persistence test | PASS |
 | REQ-B5-2-011 | README run procedure | Mission §4.10, Eval item 1 | README inspection | PASS |
-| REQ-B5-2-012 | Learner can explain request/CRUD/design decisions | Mission §3, Eval items 2-4 | `docs/LEARNING.md` aligned with implementation | PASS |
+| REQ-B5-2-012 | Learner can explain request/CRUD/design decisions | Mission §3, Eval items 2-4 | `docs/LEARNING.md` aligned with implementation | PASS (material) |
 
 ## 7. Evaluation Mapping
 
@@ -177,8 +179,10 @@ Human browser runtime status: `NOT_REQUIRED` for mandatory acceptance; screensho
 - `evidence/runtime-environment.txt`
 - `evidence/runtime-notes.md`
 - `evidence/review.md`
+- `HANDOFF.md`
+- `mission-result.yaml`
 
-All PASS claims above are backed by executed runtime/tests or direct static verification.
+All PASS claims above are backed by executed runtime/tests, direct static verification, or completed merge metadata. User personal mastery is kept separate from the implementation PASS state.
 
 ## 13. G1-G8 Checklist
 
@@ -189,14 +193,19 @@ All PASS claims above are backed by executed runtime/tests or direct static veri
 - [x] G5 RUNTIME — actual Uvicorn/HTTP/SQLite runtime and restart persistence verified
 - [x] G6 EVIDENCE — mandatory functional/test/runtime evidence stored
 - [x] G7 LEARN — implementation-aligned beginner learning material complete
-- [ ] G8 MERGE — PR merge and final handoff/result pending
+- [x] G8 MERGE — PR #1 squash merged; post-merge `HANDOFF.md` and `mission-result.yaml` recorded
 
 ## 14. STOP Rule
 
-Stop when confirmed Mission/Evaluation requirements are satisfied, required tests/evidence are complete, BLOCKER=0 and MAJOR=0. Optional refactoring, extra frameworks, authentication, relationships, deployment and other enhancements remain backlog.
+Confirmed Mission/Evaluation requirements are satisfied, required tests/evidence are complete, BLOCKER=0 and MAJOR=0, and G8 merge/handoff is complete.
 
-Current pre-merge STOP assessment: all G1-G7 completion conditions are satisfied; only G8 PR/merge/handoff finalization remains.
+**MISSION COMPLETE — STOP.**
+
+Optional refactoring, extra frameworks, authentication, relationships, deployment, search bonus, screenshots, and user mastery practice do not delay this Mission completion.
 
 ## 15. Handoff Contract
 
-After Mission PR/merge, the repository will include `HANDOFF.md` and `mission-result.yaml` with Source mode/confidence/gaps, G1-G8 results, final implementation/merge references, tests, runtime, evidence, BLOCKER/MAJOR counts and remaining backlog. The Control Tower repository remains untouched by this workcell.
+- Human-readable handoff: `HANDOFF.md`
+- Machine-readable result: `mission-result.yaml`
+- Representative integration status: `PENDING`
+- Control Tower repository was not modified by this Workcell.
