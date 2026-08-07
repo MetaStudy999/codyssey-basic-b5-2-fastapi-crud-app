@@ -92,11 +92,19 @@ class HttpFlowTest(unittest.TestCase):
         status, _, _ = self.request("GET", "/memos")
         self.assertEqual(200, status)
 
+        status, _, create_form = self.request("GET", "/memos/new")
+        self.assertEqual(200, status)
+        self.assertIn("새 메모 작성", create_form)
+
         status, headers, _ = self.request(
             "POST", "/memos", {"title": "HTTP 메모", "content": "처음 내용"}
         )
         self.assertEqual(303, status)
         self.assertEqual("/memos/1", headers.get("location"))
+
+        status, _, listing = self.request("GET", "/memos")
+        self.assertEqual(200, status)
+        self.assertIn("HTTP 메모", listing)
 
         status, _, detail = self.request("GET", "/memos/1")
         self.assertEqual(200, status)
