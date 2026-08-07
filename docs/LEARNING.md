@@ -48,7 +48,8 @@ POST /memos
 - `db.add(memo)` → 새 ORM 객체를 Session의 작업 대상으로 등록한다.
 - `db.commit()` → 트랜잭션을 커밋하며 INSERT/UPDATE/DELETE가 DB에 반영된다.
 - `db.get(Memo, id)` → 기본키 기준 단건 SELECT에 대응한다.
-- `select(Memo)` + `db.scalars(...)` → 목록 SELECT에 대응한다.
+- `select(Memo)` + `db.scalars(...)` → 현재 코드의 목록 SELECT 방식이다.
+- `Session.query(...)` → SQLAlchemy의 전통적인 ORM 조회 API로, 개념적으로 SELECT 조회에 대응한다. 현재 구현은 SQLAlchemy 2.x 스타일의 `select()`를 사용한다.
 - `db.delete(memo)` + `commit()` → DELETE에 대응한다.
 
 Session은 DB 작업 단위를 관리하는 객체다.
@@ -82,6 +83,6 @@ Session은 DB 작업 단위를 관리하는 객체다.
 
 1. 등록 버튼을 누른 뒤 브라우저 → 라우터 → 서비스 → 저장소 → DB → 상세 화면까지 어떤 순서로 움직이는가?
 2. 등록 직후 200 HTML이 아니라 303을 반환하는 이유는 무엇인가?
-3. `Session.add`, `commit`, `get`, `delete`가 각각 어떤 SQL 동작과 연결되는가?
+3. `Session.add`, `commit`, `query/select`, `delete`가 각각 어떤 SQL 동작과 연결되는가?
 4. `Depends(get_db)`를 모든 라우트에 직접 `SessionLocal()`을 쓰는 방식과 비교하면 무엇이 좋은가?
 5. 라우터에 SQL과 검증 코드를 모두 넣으면 테스트와 유지보수가 왜 어려워지는가?
