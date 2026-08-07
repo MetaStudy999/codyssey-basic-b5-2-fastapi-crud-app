@@ -34,18 +34,18 @@
 
 ## 4. Repository Baseline Inventory
 
-At `12e1630c0391e86c912df8a74c9e5afe59c15273` the repository contains only:
+At `12e1630c0391e86c912df8a74c9e5afe59c15273` the repository contained only:
 
 - `README.md`
 - `b5-2-mission.pdf`
 - `b5-2-mission.md`
 - `b5-2-evaluation.md`
 
-No FastAPI entry point, `routers/`, `services/`, `repositories/`, `models/`, `templates/`, SQLite database, dependency file or tests exist. Therefore all application implementation items start as `TODO`.
+No FastAPI entry point, `routers/`, `services/`, `repositories/`, `models/`, `templates/`, SQLite database, dependency file or tests existed. All application implementation items therefore started as `TODO`.
 
 ## 5. Mission Contract
 
-The minimum sufficient implementation will use one `Memo` domain model with four fields (`id`, `title`, `content`, `created_at`) and will provide:
+The minimum sufficient implementation uses one `Memo` domain model with four fields (`id`, `title`, `content`, `created_at`) and provides:
 
 1. Python 3.10+ compatible FastAPI app on `http://localhost:8000`.
 2. Dependencies limited to `fastapi`, `uvicorn`, `sqlalchemy`, `jinja2`, `python-multipart`.
@@ -67,33 +67,33 @@ The minimum sufficient implementation will use one `Memo` domain model with four
 - External libraries beyond the five allowed packages
 - Cloud deployment
 
-### Optional but low-cost enhancement
+### Optional enhancement included
 
-- Server-side required-field validation for title/content with an inline error message. This is a Mission bonus and must not alter the core scope.
+- Server-side required-field validation for title/content with an inline error message. This is a Mission bonus and does not alter the core scope.
 
 ## 6. Requirement Traceability
 
-| ID | Requirement | Source | Acceptance / Evidence |
-|---|---|---|---|
-| REQ-B5-2-001 | Server runs on localhost:8000 | Mission §4.1, Eval item 1 | boot log + HTTP 200 `/` |
-| REQ-B5-2-002 | Allowed dependencies only | Mission §4.1, §7 | `requirements.txt` |
-| REQ-B5-2-003 | Layer directories separated | Mission §4.2, §4.8, Eval item 2 | tree + import/responsibility inspection |
-| REQ-B5-2-004 | Jinja2 SSR main screens | Mission §4.3 | route/template inspection + HTTP pages |
-| REQ-B5-2-005 | Home purpose + 2 links | Mission §4.4 | HTTP body check |
-| REQ-B5-2-006 | Single-model CRUD | Mission §4.5, Eval item 1 | HTTP CRUD flow + DB query |
-| REQ-B5-2-007 | Form + POST + Form() | Mission §4.6 | route inspection + HTTP form submission |
-| REQ-B5-2-008 | PRG with 303 | Mission §4.7, Eval items 1/3 | POST response headers/status |
-| REQ-B5-2-009 | Not-found UX | Mission §4.5, Eval item 1 | missing ID HTTP page |
-| REQ-B5-2-010 | SQLite + ORM Session + Depends | Mission §4.9, Eval items 1/2/3 | DB file + code inspection + persistence test |
-| REQ-B5-2-011 | README run procedure | Mission §4.10, Eval item 1 | README inspection |
-| REQ-B5-2-012 | Learner can explain request/CRUD/design decisions | Mission §3, Eval items 2-4 | `docs/LEARNING.md` aligned with implementation |
+| ID | Requirement | Source | Acceptance / Evidence | Result |
+|---|---|---|---|---|
+| REQ-B5-2-001 | Server runs on localhost:8000 | Mission §4.1, Eval item 1 | boot log + HTTP 200 `/` | PASS |
+| REQ-B5-2-002 | Allowed dependencies only | Mission §4.1, §7 | `requirements.txt` | PASS |
+| REQ-B5-2-003 | Layer directories separated | Mission §4.2, §4.8, Eval item 2 | tree + import/responsibility inspection | PASS |
+| REQ-B5-2-004 | Jinja2 SSR main screens | Mission §4.3 | route/template inspection + HTTP pages | PASS |
+| REQ-B5-2-005 | Home purpose + 2 links | Mission §4.4 | HTTP body check | PASS |
+| REQ-B5-2-006 | Single-model CRUD | Mission §4.5, Eval item 1 | HTTP CRUD flow + DB query | PASS |
+| REQ-B5-2-007 | Form + POST + Form() | Mission §4.6 | route inspection + HTTP form submission | PASS |
+| REQ-B5-2-008 | PRG with 303 | Mission §4.7, Eval items 1/3 | POST response headers/status | PASS |
+| REQ-B5-2-009 | Not-found UX | Mission §4.5, Eval item 1 | missing ID HTTP page | PASS |
+| REQ-B5-2-010 | SQLite + ORM Session + Depends | Mission §4.9, Eval items 1/2/3 | DB file + code inspection + persistence test | PASS |
+| REQ-B5-2-011 | README run procedure | Mission §4.10, Eval item 1 | README inspection | PASS |
+| REQ-B5-2-012 | Learner can explain request/CRUD/design decisions | Mission §3, Eval items 2-4 | `docs/LEARNING.md` aligned with implementation | PASS |
 
 ## 7. Evaluation Mapping
 
-- Item 1 — Functional execution: automated HTTP/DB integration checks plus human browser runtime where useful.
-- Item 2 — Structure/ORM understanding: static responsibility checks and learning notes tied to exact code.
-- Item 3 — Request flow/CRUD principles: learning notes + route/service/repository/model trace.
-- Item 4 — Extension/design judgement: learning notes only; no out-of-scope implementation will be added.
+- Item 1 — Functional execution: executed HTTP/DB integration checks, Uvicorn runtime, direct SQLite verification and restart-persistence test.
+- Item 2 — Structure/ORM understanding: static responsibility review plus implementation-aligned learning notes.
+- Item 3 — Request flow/CRUD principles: learning notes + route/service/repository/model trace + executed 303 checks.
+- Item 4 — Extension/design judgement: learning notes explain DB replacement, model relationship extension and SSR→API/front-end separation without adding out-of-scope features.
 
 ## 8. Mission-specific TOC
 
@@ -128,57 +128,75 @@ B5-2
 
 ## 9. Agent Routing
 
-- ChatGPT: orchestrator, source fusion, primary implementation, test design, review.
-- Independent agent: use only after the baseline implementation/tests are complete, focused on BLOCKER/MAJOR, missing requirements, false PASS, secret exposure.
-- Human: browser acceptance only if needed after automated HTTP checks.
+- ChatGPT: orchestrator, source fusion, implementation, test design and second-pass review.
+- Additional external agent: not invoked because the selective routing rule did not encounter an unresolved source conflict, failing test, or architecture ambiguity after the baseline implementation.
+- Human browser acceptance: not required for the gate because Mission screenshots are optional and the required behavior was verified with an actual Uvicorn/HTTP/SQLite runtime. Optional presentation screenshots remain possible.
 
-## 10. Test Plan
+## 10. Test Result
 
-1. Python compile/import smoke check.
-2. Repository/service CRUD with temporary SQLite database.
-3. Start Uvicorn on port 8000 and use Python standard-library HTTP client to verify:
-   - `GET /`
-   - `GET /memos`
-   - create form and POST create → 303
-   - detail
-   - edit form and POST update → 303
-   - POST delete → 303
-   - missing ID guidance
-4. Query SQLite directly and compare stored values.
-5. Restart server and confirm data persists.
-6. Check dependencies and layer boundaries.
+Executed commands:
 
-No additional test-only external package is required.
+```bash
+python -m compileall -q app scripts tests
+python -m unittest discover -s tests -v
+```
 
-## 11. Runtime Plan
+Latest executed full suite result: **6 tests passed / 0 failed**.
 
-Automated HTTP runtime will be performed first. Human browser confirmation, if requested, will be limited to opening the home/list/detail/create/edit screens and confirming the visible flow.
+Coverage includes:
 
-## 12. Evidence Plan
+- application compilation/import
+- repository/service CRUD and validation
+- required directories and allowed dependency set
+- `Depends`, `Form`, 303 structure checks
+- Uvicorn startup on port 8000
+- home links
+- empty/populated list
+- create form
+- create/detail/edit/update/delete flow
+- 303 redirect locations
+- direct SQLite row verification
+- server restart persistence
+- missing-ID guidance
+- blank-field validation
+
+No additional test-only external package was used.
+
+## 11. Runtime Result
+
+Actual Uvicorn and SQLite runtime completed successfully. The server was stopped and restarted and the updated memo remained available after restart. Direct SQLite inspection returned the expected stored row.
+
+Human browser runtime status: `NOT_REQUIRED` for mandatory acceptance; screenshots are optional in the Mission source.
+
+## 12. Evidence
 
 - `evidence/test-results.txt`
 - `evidence/http-flow.txt`
 - `evidence/db-verification.txt`
+- `evidence/server-log.txt`
+- `evidence/runtime-environment.txt`
 - `evidence/runtime-notes.md`
-- optional human screenshots under `evidence/screenshots/`
+- `evidence/review.md`
 
-Only actual executed results may be marked PASS.
+All PASS claims above are backed by executed runtime/tests or direct static verification.
 
 ## 13. G1-G8 Checklist
 
 - [x] G1 SOURCE — source candidates, states, mode, confidence, gaps, dependency and repository baseline determined
-- [ ] G2 BUILD — minimum sufficient implementation complete
-- [ ] G3 TEST — automated tests complete
-- [ ] G4 REVIEW — BLOCKER=0 / MAJOR=0
-- [ ] G5 RUNTIME — runtime verification complete or explicit NEEDS-RUNTIME
-- [ ] G6 EVIDENCE — required evidence stored
-- [ ] G7 LEARN — implementation-aligned beginner learning material complete
-- [ ] G8 MERGE — PR merged and handoff/result recorded
+- [x] G2 BUILD — minimum sufficient implementation complete
+- [x] G3 TEST — automated tests complete; 6/6 PASS
+- [x] G4 REVIEW — BLOCKER=0 / MAJOR=0
+- [x] G5 RUNTIME — actual Uvicorn/HTTP/SQLite runtime and restart persistence verified
+- [x] G6 EVIDENCE — mandatory functional/test/runtime evidence stored
+- [x] G7 LEARN — implementation-aligned beginner learning material complete
+- [ ] G8 MERGE — PR merge and final handoff/result pending
 
 ## 14. STOP Rule
 
 Stop when confirmed Mission/Evaluation requirements are satisfied, required tests/evidence are complete, BLOCKER=0 and MAJOR=0. Optional refactoring, extra frameworks, authentication, relationships, deployment and other enhancements remain backlog.
 
+Current pre-merge STOP assessment: all G1-G7 completion conditions are satisfied; only G8 PR/merge/handoff finalization remains.
+
 ## 15. Handoff Contract
 
-Final repository must include `HANDOFF.md` and `mission-result.yaml` with source mode/confidence/gaps, G1-G8 results, final commit/PR/merge status, tests, runtime, evidence, BLOCKER/MAJOR counts and remaining backlog. The Control Tower repository remains untouched by this workcell.
+After Mission PR/merge, the repository will include `HANDOFF.md` and `mission-result.yaml` with Source mode/confidence/gaps, G1-G8 results, final implementation/merge references, tests, runtime, evidence, BLOCKER/MAJOR counts and remaining backlog. The Control Tower repository remains untouched by this workcell.
