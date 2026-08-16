@@ -4,6 +4,14 @@
 현재 작업 모드: **Phase A — REFERENCE BUILD**  
 Runtime Mission 상태: **⬜ NOT STARTED**
 
+## 선행 학습
+
+- **필수 선행 미션:** 없음
+- **권장 선행 미션:** B5-1, B4-1
+- **있으면 좋은 선행 지식:** HTTP Request/Response, Form, CRUD, SQL, Python Web 기초
+
+B5-1의 SQL/DB 기초와 B4-1의 HTML form/Web 흐름을 먼저 익히면 FastAPI CRUD 구조를 이해하기 쉽습니다. 해당 개념을 이미 알고 있다면 두 미션을 CLEAR하지 않고도 B5-2를 시작할 수 있습니다.
+
 ## 현재 판정
 
 B5-2의 FastAPI CRUD **Reference 핵심 기준본은 준비 완료**했습니다. 실제 브라우저/DB Runtime과 Evidence는 Phase C에서 수행하므로 아직 `✅ CLEAR`가 아닙니다.
