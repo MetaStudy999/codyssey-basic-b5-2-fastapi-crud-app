@@ -1,6 +1,0 @@
-.venv/
-__pycache__/
-*.py[cod]
-database.db
-*.db-journal
-.DS_Store

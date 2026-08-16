@@ -1,3 +1,0 @@
-database: /mnt/data/b5-2-work/database.db
-memo_count: 1
-(1, '증빙 메모 수정', '재시작 후에도 유지', '2026-08-07 19:48:59.264945')
