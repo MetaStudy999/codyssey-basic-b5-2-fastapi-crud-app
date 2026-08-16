@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}메모 목록{% endblock %}
+{% block content %}
+<h1>메모 목록</h1>
+<p><a href="/memos/new">새 메모 등록</a></p>
+{% if memos %}
+  {% for memo in memos %}
+  <article>
+    <h2><a href="/memos/{{ memo.id }}">{{ memo.title }}</a></h2>
+    <small>작성: {{ memo.created_at }}</small>
+  </article>
+  {% endfor %}
+{% else %}
+  <p>저장된 메모가 없습니다.</p>
+{% endif %}
+{% endblock %}
