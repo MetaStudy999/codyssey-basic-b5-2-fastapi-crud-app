@@ -18,6 +18,7 @@ B5-2의 FastAPI CRUD **Reference 핵심 기준본은 준비 완료**했습니다
 
 ## 핵심 문서
 
+- `START-CHECK.md`: DB/Web/CRUD 시작 전 자가진단
 - `REFERENCE-BUILD.md`: 기준 구현 설계와 범위
 - `REFERENCE-STATUS.md`: Phase A / Phase C 구분
 - `BEGINNER-GUIDE.md`: 입문자 처음부터 끝까지 학습 경로
@@ -25,6 +26,8 @@ B5-2의 FastAPI CRUD **Reference 핵심 기준본은 준비 완료**했습니다
 - `docs/requirements-mapping.md`: 요구사항→구현→검증→증빙
 - `docs/evaluation-qa.md`: 평가 예상 Q&A
 - `evidence/README.md`: 실제 Evidence 수집 기준
+
+`START-CHECK.md`는 공식 Gate가 아니라 부족한 DB/Web 개념만 골라 먼저 보충하기 위한 안내입니다.
 
 ## 기준 구현
 
