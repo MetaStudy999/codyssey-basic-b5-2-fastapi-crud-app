@@ -28,14 +28,14 @@ def new_memo_form(request: Request):
         name="memos/form.html",
         context={
             "page_title": "메모 등록",
-            "action": "/memos",
+            "action": "/memos/",
             "memo": None,
             "error": None,
         },
     )
 
 
-@router.post("")
+@router.post("/")
 def create_memo(
     request: Request,
     title: str = Form(...),
@@ -50,7 +50,7 @@ def create_memo(
             name="memos/form.html",
             context={
                 "page_title": "메모 등록",
-                "action": "/memos",
+                "action": "/memos/",
                 "memo": {"title": title, "content": content},
                 "error": str(exc),
             },
