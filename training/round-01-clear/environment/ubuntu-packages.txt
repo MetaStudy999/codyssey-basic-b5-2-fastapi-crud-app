@@ -1,0 +1,4 @@
+# B5-2 — Ubuntu 24.04 mission-specific APT packages
+# FastAPI/Jinja2/SQLAlchemy/Uvicorn belong in the repository-local .venv.
+python3
+python3-venv
